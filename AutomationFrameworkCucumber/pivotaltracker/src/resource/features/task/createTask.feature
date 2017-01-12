@@ -19,3 +19,10 @@ Feature: Task
     And I have a task taskOne and taskTwo created
     When I delete taskOne
     Then taskOne should be deleted
+
+
+  Scenario: Create task without name
+    When I go to Create Story as StoryTest button and click
+    When I press add new task without name
+    Then I expect an alert message
+
