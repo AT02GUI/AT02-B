@@ -21,6 +21,7 @@ import org.testng.annotations.AfterSuite;
 import java.io.IOException;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 
 public class CreateTaskSteps {
@@ -120,7 +121,16 @@ public class CreateTaskSteps {
     assertEquals(0,taskPage.sizeContentNameTask(taskName));
   }
 
+  @When("^I press add new task without name$")
+  public void iPressAddNewTaskWithoutName() {
+    taskPage.addTask("");
+  }
 
+  @Then("^I expect an alert message$")
+  public void iExpectAnAlertMessage() {
+    assertTrue(taskPage.alertDialog().contains("Cannot Save Task"));
+    taskPage.clickButtonOk();
+  }
   /**
    * Method to clean up scenario.
    */
