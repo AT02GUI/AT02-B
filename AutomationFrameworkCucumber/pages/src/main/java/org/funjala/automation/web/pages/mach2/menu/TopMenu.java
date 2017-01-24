@@ -20,10 +20,39 @@ public class TopMenu {
   @FindBy(css = TopMenuModel.logOutButton)
   private WebElement logOutButton;
 
+  @FindBy(xpath = TopMenuModel.jalasoftBtn)
+  private WebElement jalasoftBtn;
+
+  @FindBy(xpath = TopMenuModel.boardDropDownBtn)
+  private WebElement boardDropDownBtn;
+
+  @FindBy(xpath = TopMenuModel.addBoardBtn)
+  private WebElement addBoardBtn;
+
+  @FindBy(xpath = TopMenuModel.addWidgetBtn)
+  private WebElement addWidgetBtn;
+
   public TopMenu(WebDriver driver) {
     this.driver = driver;
     PageFactory.initElements(driver, this);
     wait = new WebDriverWait(driver, 20);
+  }
+
+  public void clickBoardDropDown(){
+    boardDropDownBtn.click();
+  }
+
+  public void clickJalasoftBtn(){
+    jalasoftBtn.click();
+  }
+
+  public void clickAddBoardBtn(){
+    addBoardBtn.click();
+  }
+
+  public void clickAddWidgetBtn(){
+    addWidgetBtn.click();
+
   }
 
   public void clickOnLogOut() {
