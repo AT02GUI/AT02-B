@@ -1,6 +1,6 @@
 package org.funjala.automation.web.pages.mach2.widget;
 
-import org.funjala.automation.web.model.mach2.container.WidgetModel;
+import org.funjala.automation.web.model.mach2.widget.WidgetModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,6 +55,7 @@ public class WidgetPage {
   }
 
   public void setManagerName(String managerName) {
+    wait.until(ExpectedConditions.visibilityOf(dropdownIcon));
     wait.until(ExpectedConditions.elementToBeClickable(dropdownIcon));
     dropdownIcon.click();
 
@@ -73,7 +74,6 @@ public class WidgetPage {
 
   public int verifyCant(String managerName) {
     int cant = 0;
-//    wait.until(ExpectedConditions.visibilityOf())
     for (WebElement element : listElementTable) {
       if (element.getText().equals(managerName)) {
         cant++;
