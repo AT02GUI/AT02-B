@@ -8,14 +8,13 @@ import java.util.concurrent.TimeUnit;
 import org.funjala.automation.web.common.objectReader.ReadObject;
 import org.funjala.automation.web.common.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class Driver {
 
   private static Driver instance;
   public static WebDriver driver;
-  private WebDriver chrome;
+  private WebDriver webDriver;
   public static final String OpenERP = "urlOE";
   public static final String Mach2 = "urlMach2";
   public static final String Url = "url";
@@ -32,13 +31,13 @@ public class Driver {
   public WebDriver openBrowser(String urlPage) throws IOException {
     ReadObject object = new ReadObject();
     Properties configurationObj = object.getObjectRepository();
-    if (chrome == null) {
+    if (webDriver == null) {
       driver = new WebDriverFactory(System.getProperty("browser")).getDriver();
       driver.manage().timeouts().implicitlyWait(14, TimeUnit.SECONDS);
       driver.manage().window().maximize();
-      chrome = driver;
-    } else if (chrome != null) {
-      driver = chrome;
+      webDriver = driver;
+    } else if (webDriver != null) {
+      driver = webDriver;
     }
 
     if (urlPage.equals(OpenERP)) {
