@@ -154,6 +154,7 @@ public class WidgetPage {
     driver.findElement(By.xpath("//b[text()='" + tag + "']/parent::*/following-sibling::div/i")).click();
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='menu transition visible']/div[text()='" + value + "']")));
     driver.findElement(By.xpath("//div[@class='menu transition visible']/div[text()='" + value + "']")).click();
+    driver.findElement(By.xpath("//b[text()='" + tag + "']/parent::*/following-sibling::div/i")).click();
   }
 
 
