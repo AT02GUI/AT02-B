@@ -31,15 +31,6 @@ import static org.testng.Assert.assertEquals;
  */
 public class TableEmPeInForManagerSteps {
 
-  @And("^I fill manager name on textfield as \"([^\"]*)\"$")
-  public void iFillManagerNameOnTextfieldAs(String managerName) {
-    Log log = Log.getInstance();
-    WebDriver driver = Driver.getDriver().getWebDriver();
-    WidgetPage widget = new WidgetPage(driver);
-    log.info("Step", "I fill manager name on textfield as " + managerName, "Select Manager");
-    widget.setManagerName(managerName);
-  }
-
   @Then("^I have a table widget with \"([^\"]*)\" filled$")
   public void iHaveATableWidgetWithFilled(String managerName) throws IOException, InterruptedException {
     Log log = Log.getInstance();

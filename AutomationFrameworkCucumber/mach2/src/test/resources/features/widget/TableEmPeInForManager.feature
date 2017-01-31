@@ -1,4 +1,4 @@
-@table
+@TableWidget
 Feature: Add Table Widget
 
   All Employees Personal Information are displayed
@@ -15,7 +15,7 @@ Feature: Add Table Widget
     And I select "Open ERP" service
     And I select "Employees Personal Information" of Open ERP
 
-    And I fill manager name on textfield as "Patricia Villagomez Montalvo"
+    And I select "Patricia Villagomez Montalvo" on "Manager" option
     And I click on save button
     Then I have a table widget with "Patricia Villagomez Montalvo" filled
 

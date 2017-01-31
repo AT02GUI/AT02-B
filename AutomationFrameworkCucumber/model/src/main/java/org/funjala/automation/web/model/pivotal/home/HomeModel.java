@@ -5,7 +5,7 @@ package org.funjala.automation.web.model.pivotal.home;
  */
 public class HomeModel {
   public static final String pivotalBtn = "//h1/a/div";
-  public static final String createProjectBtn = "//div[2]/button";
+  public static final String createProjectBtn = "//button[@aria-label='Create project']";
 
   public static final String workspaceTab = "span:nth-child(2)";
   public static final String createWorkspaceButton = "div.DashboardV2__Tabs__ActionButton > button";
