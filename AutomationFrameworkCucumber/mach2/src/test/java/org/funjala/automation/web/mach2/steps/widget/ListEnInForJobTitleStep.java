@@ -58,8 +58,8 @@ public class ListEnInForJobTitleStep {
     WebDriver driver;
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose7");
-    loginERP.setPassword("jose7");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
     //Go to Human Resources

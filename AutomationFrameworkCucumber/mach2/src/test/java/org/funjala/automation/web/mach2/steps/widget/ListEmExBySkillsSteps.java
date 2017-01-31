@@ -47,8 +47,8 @@ public class ListEmExBySkillsSteps {
 
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose4");
-    loginERP.setPassword("jose4");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
     //Go and Click on Human Resources top menu button
