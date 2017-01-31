@@ -9,6 +9,6 @@ Feature: Add widget table with Engineer Information search for division
     And I select "Open ERP" service
     And I select "Engineer Information" of Open ERP
 
-    And In the option Division I click on "Cleaning - Night Shift"
+    And I select "Cleaning - Night Shift" on "Divisions" option
     And I click on save Button
-    Then I have a table widget with "Cleaning - Night Shift" Division filled
+    Then  I should have the same result using Open ERP web page to search "Cleaning - Night Shift" on "Division" filled
