@@ -27,6 +27,15 @@ import static org.testng.Assert.assertEquals;
  */
 public class TableEnInForDivision {
 
+  @And("^In the option Division I click on \"([^\"]*)\"$")
+  public void iFillManagerNameOnTextfieldAs(String divisionName) {
+    Log log = Log.getInstance();
+    WebDriver driver = Driver.getDriver().getWebDriver();
+    WidgetPage widget = new WidgetPage(driver);
+    log.info("Step", "In the option Division I click on " + divisionName, "Select Division");
+    widget.setDivisionName(divisionName);
+  }
+
   @And("^I click on save Button$")
   public void iClickOnSaveButton() {
     Log log = Log.getInstance();
@@ -37,22 +46,22 @@ public class TableEnInForDivision {
   }
 
 
-  @Then("^I should have the same result using Open ERP web page to search \"([^\"]*)\" on \"([^\"]*)\" filled$")
-  public void iHaveATableWidgetWithFilled(String value, String tag) throws IOException, InterruptedException {
+  @Then("^I have a table widget with \"([^\"]*)\" Division filled$")
+  public void iHaveATableWidgetWithFilled(String divisionName) throws IOException, InterruptedException {
     Log log = Log.getInstance();
     WebDriver driver = Driver.getDriver().getWebDriver();
     WidgetPage widget = new WidgetPage(driver);
     MyDashboard dashboard = new MyDashboard(driver);
     TopMenuPage topMenuPage = new TopMenuPage(driver);
     log.info("Step", "I have a table widget with Information filled", "Verification of datas");
-    int actualResult = widget.verifyCant(value);
+    int actualResult = widget.verifyCant(divisionName);
     dashboard.deleteBoard();
     topMenuPage.clickOnLogOut();
     //ERP
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose6");
-    loginERP.setPassword("jose6");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
     homeERP.clickHumanResources();
@@ -60,7 +69,7 @@ public class TableEnInForDivision {
 
     searchERP.clickSearchArrow();
     searchERP.clickAdvancedSearch();
-    searchERP.foundAndClickAdvancedFilterOptions(tag, "is equal to", value);
+    searchERP.foundAndClickAdvancedFilterOptions("Division", "is equal to", divisionName);
     searchERP.clickApplySearch();
     searchERP.clickSwitchList();
     searchERP.clickNumberElement();

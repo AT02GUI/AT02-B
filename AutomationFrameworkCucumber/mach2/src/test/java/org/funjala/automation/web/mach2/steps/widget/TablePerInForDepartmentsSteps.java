@@ -72,8 +72,8 @@ private int actualResult;
     log.info("Step", "I have a table with employees filtered","expected result");
 
 
-    oeLoginPage.setUserName("jose7");
-    oeLoginPage.setPassword("jose7");
+    oeLoginPage.setUserName();
+    oeLoginPage.setPassword();
     homePage = oeLoginPage.clickBtnSubmit();
     homePage.clickHumanResources();
     oeSearch = homePage.oeSearch();

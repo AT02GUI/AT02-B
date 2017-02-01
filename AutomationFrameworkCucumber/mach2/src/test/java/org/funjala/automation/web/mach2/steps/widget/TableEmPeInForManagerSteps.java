@@ -52,8 +52,8 @@ public class TableEmPeInForManagerSteps {
     //Login OPEN ERP
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose6");
-    loginERP.setPassword("jose6");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
     //Go to Human Resources
@@ -120,8 +120,8 @@ public class TableEmPeInForManagerSteps {
     //Login OPEN ERP
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose6");
-    loginERP.setPassword("jose6");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
 //    //Go to Human Resources

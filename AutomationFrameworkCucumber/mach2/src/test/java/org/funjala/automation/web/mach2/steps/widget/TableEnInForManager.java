@@ -56,8 +56,8 @@ public class TableEnInForManager {
     log.info("Step", "I should have the same result using Open ERP web page to search Engineer Information for " + manager + " as manager", "Mach Engineer Information for Manager between Mach2 and Open ERP");
     driver = Driver.getDriver().openBrowser(Driver.OpenERP);
     OELoginPage loginERP = new OELoginPage(driver);
-    loginERP.setUserName("jose6");
-    loginERP.setPassword("jose6");
+    loginERP.setUserName();
+    loginERP.setPassword();
     OEHomePage homeERP = loginERP.clickBtnSubmit();
 
     //Go to Human Resources
